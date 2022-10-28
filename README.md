@@ -1,124 +1,122 @@
 # Hangman 
 
-/******************************************************************************
+/****************************************************************************** 
+ 
+                              Online C++ Compiler. 
+               Code, Compile, Run and Debug C++ program online. 
+Write your code in this editor and press "Run" button to compile and execute it. 
+ 
+*******************************************************************************/ 
+ 
+#include <iostream> 
 
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
-#include <iostream>
-
-
-using namespace std;
-int main(){
-    cout << "Welcome Player" << endl;
-srand(time(0)); // Initialize random number generator.
-
-int random = (rand() % 10) + 1;
-//get a random number, use if else statements to get the word
-string word;
-    if (random == 1){
-        word = "pizza";
-    }
-    else if (random == 2){
-        word = "hotdog";
-    }
-    else if (random == 3){
-        word = "hire";
-    }
-    else if (random == 4){
-        word = "hamburger";
-    }
-    else if (random == 5){
-        word = "chess";
-    }
-    else if (random == 6){
-        word = "payback";
-    }
-    else if (random == 7){
-        word = "cougar";
-    }
-    else if (random == 8){
-        word = "leopard";
-    }
-    else if (random == 9){
-        word = "champion";
-    }
-    else if (random == 10){
-        word = "final";
-    }
-    cout << "This word has " << word.length() << " letters in it" << endl;
-    char letter;
-    int k = 0;
-    int hangman = 0;
-    string part;
-    int correct = 0;
+ 
+using namespace std; 
+int main(){ 
+cout << "Welcome Player" << endl; 
+srand(time(0)); // Initialize random number generator. 
+ 
+int random = (rand() % 10) + 1; 
+//get a random number, use if else statements to get the word 
+string word; 
+    if (random == 1){ 
+        word = "pizza"; 
+    } 
+    else if (random == 2){ 
+        word = "hotdog"; 
+    } 
+    else if (random == 3){ 
+        word = "hire"; 
+    } 
+    else if (random == 4){ 
+        word = "hamburger"; 
+    } 
+    else if (random == 5){ 
+        word = "chess"; 
+    } 
+    else if (random == 6){ 
+        word = "payback"; 
+    } 
+    else if (random == 7){ 
+        word = "cougar"; 
+    } 
+    else if (random == 8){ 
+        word = "leopard"; 
+    } 
+    else if (random == 9){ 
+        word = "champion"; 
+    } 
+    else if (random == 10){ 
+        word = "final"; 
+    } 
+    cout << "This word has " << word.length() << " letters in it" << endl; 
+    char letter; 
+    int k = 0; 
+    int hangman = 0; 
+    string part; 
+    int correct = 0; 
     
-    string x = "";
+    while(k < 100){ 
+    ++k; 
+    cout << "Please pick a letter" << endl; 
     
-    while(k < 100){
-    ++k;
-    cout << "Please pick a letter" << endl;
-    
-    cin>> letter;
+    cin>> letter; 
     
     
     
-    int count = 0;
-    for(int i = 0; i < word.size(); ++i){
-        
-        if(letter == word.at(i)){
-            count = count + 1;
-            
-            ++correct;
+    int count = 0; 
+    for(int i = 0; i < word.size(); ++i){ 
+                                    
+        if(letter == word.at(i)){ 
+            count = count + 1; 
+             
+            ++correct; 
             
         
             
-        }
-        if(i == word.size()-1 && count > 0){
-            if(count == 1){
-                cout << "Correct, there is " << count << " " << letter << endl;
-            }
-            else{
-            cout << "Correct, there are " << count << " " << letter << "'s" << endl;
-            }
-        }
-        else if (i == word.size()-1){
-            hangman = hangman + 1;
+        } 
+        if(i == word.size()-1 && count > 0){ 
+            if(count == 1){ 
+                cout << "Correct, there is " << count << " " << letter << endl; 
+            } 
+            else{ 
+            cout << "Correct, there are " << count << " " << letter << "'s" << endl; 
+            } 
+        } 
+        else if (i == word.size()-1){ 
+            hangman = hangman + 1; 
             
-            if(hangman == 1){
-                part = "head";
-            }
-            else if(hangman == 2){
-                part = "body";
-            }
-            else if(hangman == 3){
-                part = "left leg";
-            }
-            else if(hangman == 4){
-                part = "right leg";
-            }
-            else if(hangman == 5){
-                part = "left arm";
-            }
-            else if(hangman == 6){
-                part = "right arm";
-                 cout << "That is incorrect, you gain a " << part << endl << "Your man is hanged," << endl << "GAME OVER";
-                return 0;
-            }
-            cout << "That is incorrect you gain a " << part << endl;
+            if(hangman == 1){ 
+                part = "head"; 
+            } 
+            else if(hangman == 2){ 
+                part = "body"; 
+            } 
+            else if(hangman == 3){ 
+                part = "left leg"; 
+            } 
+            else if(hangman == 4){ 
+                part = "right leg"; 
+            } 
+            else if(hangman == 5){ 
+                part = "left arm"; 
+            } 
+            else if(hangman == 6){ 
+                part = "right arm"; 
+                 cout << "That is incorrect, you gain a " << part << endl << "Your man is hanged," << endl << "GAME OVER"; 
+                return 0; 
+            } 
+            cout << "That is incorrect you gain a " << part << endl; 
             
-        }
-        if(correct == word.length()){
-                cout << "congratulations the word was " << word << " YOU WIN!" << endl;
-                return 0;
-            }
+        } 
+        if(correct == word.length()){ 
+                cout << "congratulations the word was " << word << " YOU WIN!" << endl; 
+                return 0; 
+            } 
         
-    }   
+    }    
         
-    }
+    } 
 
-return 0;
-}
+return 0; 
+} 
