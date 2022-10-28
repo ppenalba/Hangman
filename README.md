@@ -1,60 +1,53 @@
-# Hangman 
+//# Hangman 
 
-/****************************************************************************** 
- 
-                              Online C++ Compiler. 
-               Code, Compile, Run and Debug C++ program online. 
-Write your code in this editor and press "Run" button to compile and execute it. 
- 
-*******************************************************************************/ 
- 
-#include <iostream> 
 
- 
-using namespace std; 
-int main(){ 
-cout << "Welcome Player" << endl; 
-srand(time(0)); // Initialize random number generator. 
- 
-int random = (rand() % 10) + 1; 
-//get a random number, use if else statements to get the word 
-string word; 
-    if (random == 1){ 
-        word = "pizza"; 
-    } 
-    else if (random == 2){ 
-        word = "hotdog"; 
-    } 
-    else if (random == 3){ 
-        word = "hire"; 
-    } 
-    else if (random == 4){ 
-        word = "hamburger"; 
-    } 
-    else if (random == 5){ 
-        word = "chess"; 
-    } 
-    else if (random == 6){ 
-        word = "payback"; 
-    } 
-    else if (random == 7){ 
-        word = "cougar"; 
-    } 
-    else if (random == 8){ 
-        word = "leopard"; 
-    } 
-    else if (random == 9){ 
-        word = "champion"; 
-    } 
-    else if (random == 10){ 
-        word = "final"; 
-    } 
-    cout << "This word has " << word.length() << " letters in it" << endl; 
-    char letter; 
-    int k = 0; 
-    int hangman = 0; 
-    string part; 
-    int correct = 0; 
+#include <iostream>  
+  
+   
+using namespace std;   
+int main(){  
+cout << "Welcome Player" << endl;  
+srand(time(0)); // Initialize random number generator.  
+   
+int random = (rand() % 10) + 1;  
+//get a random number, use if else statements to get the word  
+string word;  
+    if (random == 1){  
+        word = "pizza";  
+    }  
+    else if (random == 2){  
+        word = "hotdog";  
+    }  
+    else if (random == 3){  
+        word = "hire";  
+    }  
+    else if (random == 4){  
+        word = "hamburger";  
+    }  
+    else if (random == 5){  
+        word = "chess";  
+    }  
+    else if (random == 6){  
+        word = "payback";  
+    }  
+    else if (random == 7){  
+        word = "cougar";  
+    }  
+    else if (random == 8){  
+        word = "leopard";  
+    }  
+    else if (random == 9){  
+        word = "champion";  
+    }  
+    else if (random == 10){  
+        word = "final";  
+    }  
+    cout << "This word has " << word.length() << " letters in it" << endl;  
+    char letter;  
+    int k = 0;  
+    int hangman = 0;  
+    string part;  
+    int correct = 0;  
     
     while(k < 100){ 
     ++k; 
