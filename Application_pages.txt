@@ -1,0 +1,9 @@
+Home Page (Activity information):  Activity_ID, Cost, Min_Group_Size, Max_Group_Size, Description, Latitude, Longitude, URL
+
+Activity Page (Activity Information): Activity_ID, Cost, Min_Group_Size, Max_Group_Size, Description, Latitude, Longitude, URL 
+
+Review Page (Review information):  Review_ID, Date_Created, Description
+
+Profile Page (User information):  User_ID, Email, F_Name, L_Name, IsAdmin, no password_hash and No password_salt
+
+Favorite Page  (Favorite information):  UserID, ActivityID
